@@ -8,7 +8,12 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return '<h1>OKAY</h1>'
+    f = open("../data/chat.txt", "r")
+    data = f.readlines()
+    ret = ""
+    for line in data:
+        ret = ret + line + "<br/>"
+    return ret
 
 
 @app.route('/quote')

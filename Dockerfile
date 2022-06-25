@@ -7,6 +7,7 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 
 COPY ./src /app
+COPY ./data /data
 
 ENTRYPOINT [ "python" ]
 

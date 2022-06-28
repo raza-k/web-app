@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_cors import CORS
 from datetime import datetime
 
@@ -9,11 +9,8 @@ CORS(app)
 @app.route('/')
 def index():
     f = open("../data/chat.txt", "r")
-    data = f.readlines()
-    ret = ""
-    for line in data:
-        ret = ret + line + "<br/>"
-    return ret
+    data = f.read()
+    return render_template('index.html', chat=data)
 
 
 @app.route('/quote')

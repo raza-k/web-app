@@ -2,3 +2,6 @@ cheif: hello how are you
 goomba: yo whats up
 mario: where to jump
 johnson: get outta here
+yesyesyeshello
+hello
+test

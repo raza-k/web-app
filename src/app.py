@@ -1,16 +1,23 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
 from flask_cors import CORS
 from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/chat', methods = ['POST'])
+def chat():
+    c = request.form['sentence']
+    f = open("../data/chat.txt", "a")
+    f.write(c+"\n")
+    f.close()
+    return redirect("/")
 
 @app.route('/')
 def index():
     f = open("../data/chat.txt", "r")
     data = f.read()
-    return render_template('index.html', chat=data)
+    return render_template('index.html', chat=data, user="Raza")
 
 
 @app.route('/quote')

@@ -1,14 +1,31 @@
 <html>
+    <head>
+        <style>
+            .button {
+                 background-color: #4CAF50; /* Green */
+                 border: none;
+                 color: white;
+                 padding: 7px;
+                 text-align: center;
+                 text-decoration: none;
+                 display: inline-block;
+                 font-size: 12px;
+            }
+
+            body {
+                background-color: #FFFAF0;
+            }
+        </style>
+    </head>
     <body>
         <h1>Welcome to the chat sever, {{user}}</h1>
         <pre>
 {{ chat }}
         </pre>
-    <form method="post" action="/chat">
-        <input type="text" name="sentence">
-        <input type="submit">
-
-
-    </form>
+        <form method="post" action="/chat">
+            <input type="text" name="user" placeholder="put name">
+            <input type="text" name="sentence" placeholder="type something">
+            <input class="button" type="submit">
+        </form>
     </body>
 </html>

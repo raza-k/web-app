@@ -7,9 +7,10 @@ CORS(app)
 
 @app.route('/chat', methods = ['POST'])
 def chat():
+    u = request.form['user']
     c = request.form['sentence']
     f = open("../data/chat.txt", "a")
-    f.write(c+"\n")
+    f.write(u + ": " + c + "\n")
     f.close()
     return redirect("/")
 
